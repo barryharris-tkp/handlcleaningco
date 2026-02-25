@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&L Cleaning Co. — A Clean, Restful Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating botanical elements -->
+    <div class="floating-botanicals" aria-hidden="true">
+        <svg class="botanical-float b1" viewBox="0 0 80 120" fill="none">
+            <path d="M40 120V60" stroke="var(--sage)" stroke-width="1.5"/>
+            <path d="M40 90C25 85 15 70 20 55C25 40 38 45 40 60" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+            <path d="M40 75C55 70 65 55 60 40C55 25 42 30 40 45" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+            <path d="M40 55C28 50 22 38 26 28C30 18 39 22 40 32" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+        </svg>
+        <svg class="botanical-float b2" viewBox="0 0 60 100" fill="none">
+            <path d="M30 100V40" stroke="var(--sage)" stroke-width="1.2"/>
+            <path d="M30 80C18 76 12 64 16 52C20 40 29 44 30 56" stroke="var(--sage)" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.25"/>
+            <path d="M30 60C42 56 48 44 44 32C40 20 31 24 30 36" stroke="var(--sage)" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.25"/>
+        </svg>
+        <svg class="botanical-float b3" viewBox="0 0 80 120" fill="none">
+            <path d="M40 120V50" stroke="var(--sage)" stroke-width="1.5"/>
+            <path d="M40 100C52 96 60 82 56 68C52 54 42 58 40 72" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+            <path d="M40 78C28 74 20 60 24 46C28 32 38 36 40 50" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 40 36" fill="none">
+                    <path d="M20 2L2 18H8V34H32V18H38L20 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M16 34V22H24V34" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="20" y1="8" x2="20" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <!-- small heart -->
+                    <path d="M19 11C19 10 20 9 20 9C20 9 21 10 21 11C21 12 20 13 20 13C20 13 19 12 19 11Z" fill="currentColor" opacity="0.6"/>
+                </svg>
+                <span>H&L Cleaning Co.</span>
+            </a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#deep-clean">Deep Clean</a>
+                <a href="#contact" class="nav-cta">Book a Consultation</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#services">Services</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#deep-clean">Deep Clean</a>
+            <a href="#contact">Book a Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="hero-grain"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Central Arkansas Home Cleaning</div>
+            <h1 class="hero-title">
+                <span class="hero-line line-1">A clean home</span>
+                <span class="hero-line line-2">is a <em>restful</em> home</span>
+            </h1>
+            <p class="hero-sub">Thoughtful, personalized cleaning that lets you breathe easy. Build your perfect cleaning package and reclaim your peace of mind.</p>
+            <div class="hero-actions">
+                <a href="#services" class="btn btn-primary">Build Your Package</a>
+                <a href="#contact" class="btn btn-outline">Book a Consultation</a>
+            </div>
+            <div class="hero-vine" aria-hidden="true">
+                <svg viewBox="0 0 400 80" fill="none">
+                    <path d="M0 40 Q100 10 200 40 Q300 70 400 40" stroke="var(--sage)" stroke-width="1.5" fill="none" class="vine-path"/>
+                    <path d="M80 30C72 22 76 12 84 10C92 8 94 18 88 24" stroke="var(--sage)" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.4"/>
+                    <path d="M160 48C168 56 164 66 156 68C148 70 146 60 152 54" stroke="var(--sage)" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.4"/>
+                    <path d="M240 32C232 24 236 14 244 12C252 10 254 20 248 26" stroke="var(--sage)" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.4"/>
+                    <path d="M320 46C328 54 324 64 316 66C308 68 306 58 312 52" stroke="var(--sage)" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services / Pricing Builder -->
+    <section class="section services" id="services">
+        <div class="section-header">
+            <span class="section-tag">Services & Pricing</span>
+            <h2 class="section-title">Build Your Cleaning Package</h2>
+            <p class="section-sub">Select your base service and add exactly what you need. Like building the perfect cup of tea — only what you want, nothing you don't.</p>
+        </div>
+
+        <div class="builder">
+            <!-- Step 1: Base -->
+            <div class="builder-step" data-step="1">
+                <div class="step-label"><span class="step-num">1</span> Choose Your Base Service</div>
+                <p class="step-desc">Your base clean includes kitchen, living room, and dining room — mopped, wiped, and refreshed.</p>
+                <div class="base-options">
+                    <label class="base-card" data-base="80">
+                        <input type="radio" name="base" value="80" checked>
+                        <div class="base-card-inner">
+                            <div class="base-card-top">
+                                <span class="base-sqft">Under 2,200 sq ft</span>
+                                <span class="base-price">$80</span>
+                            </div>
+                            <span class="base-includes">Kitchen + Living + Dining</span>
+                            <div class="base-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="base-card" data-base="100">
+                        <input type="radio" name="base" value="100">
+                        <div class="base-card-inner">
+                            <div class="base-card-top">
+                                <span class="base-sqft">2,200 – 3,000 sq ft</span>
+                                <span class="base-price">$100</span>
+                            </div>
+                            <span class="base-includes">Kitchen + Living + Dining</span>
+                            <div class="base-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="base-card base-card-estimate" data-base="estimate">
+                        <input type="radio" name="base" value="estimate">
+                        <div class="base-card-inner">
+                            <div class="base-card-top">
+                                <span class="base-sqft">Over 3,000 sq ft</span>
+                                <span class="base-price base-price-sm">Custom</span>
+                            </div>
+                            <span class="base-includes">Contact for estimate</span>
+                            <div class="base-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 2: Add-ons -->
+            <div class="builder-step" data-step="2">
+                <div class="step-label"><span class="step-num">2</span> Add What You Need</div>
+                <p class="step-desc">Customize your clean with optional add-ons. Add or remove anytime.</p>
+                <div class="addons-grid">
+                    <!-- Additional Rooms -->
+                    <div class="addon-card" data-addon="rooms">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect x="4" y="8" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M4 14H28" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 20H22" stroke="currentColor" stroke-width="1.2"/>
+                                <path d="M8 8V4H24V8" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Additional Rooms</span>
+                            <span class="addon-detail">Bedroom, office, etc.</span>
+                            <span class="addon-price">$12 <small>each</small></span>
+                        </div>
+                        <div class="addon-counter">
+                            <button class="counter-btn minus" data-action="minus" aria-label="Remove room">−</button>
+                            <span class="counter-val" id="rooms-count">0</span>
+                            <button class="counter-btn plus" data-action="plus" aria-label="Add room">+</button>
+                        </div>
+                    </div>
+                    <!-- Bathrooms -->
+                    <div class="addon-card" data-addon="bathrooms">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <path d="M6 16H26V22C26 25.3 23.3 28 20 28H12C8.7 28 6 25.3 6 22V16Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 16V6C10 4.9 10.9 4 12 4H14C15.1 4 16 4.9 16 6V8" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="22" cy="12" r="2" stroke="currentColor" stroke-width="1.2"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Bathrooms</span>
+                            <span class="addon-detail">Full clean, top to bottom</span>
+                            <span class="addon-price">$20 <small>each</small></span>
+                        </div>
+                        <div class="addon-counter">
+                            <button class="counter-btn minus" data-action="minus" aria-label="Remove bathroom">−</button>
+                            <span class="counter-val" id="bathrooms-count">0</span>
+                            <button class="counter-btn plus" data-action="plus" aria-label="Add bathroom">+</button>
+                        </div>
+                    </div>
+                    <!-- Deep Clean -->
+                    <div class="addon-card addon-toggle" data-addon="deepclean">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <path d="M16 4V28" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M16 8C12 6 8 8 8 12C8 16 16 16 16 16" stroke="currentColor" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                                <path d="M16 16C20 14 24 16 24 20C24 24 16 24 16 24" stroke="currentColor" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                                <path d="M16 12C19 11 22 13 21 16C20 19 16 18 16 18" stroke="currentColor" stroke-width="1" fill="var(--sage-light)" fill-opacity="0.2"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Deep Clean Rotation</span>
+                            <span class="addon-detail">4-week rotating deep focus</span>
+                            <span class="addon-price">$25 <small>/week</small></span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="deepclean-toggle">
+                            <span class="toggle-track"></span>
+                        </label>
+                    </div>
+                    <!-- Laundry: Wash & Dry -->
+                    <div class="addon-card" data-addon="laundryWD">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect x="6" y="4" width="20" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="16" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13 16C14 14 18 14 19 16C18 18 14 18 13 16" stroke="currentColor" stroke-width="1"/>
+                                <circle cx="10" cy="8" r="1.5" stroke="currentColor" stroke-width="1"/>
+                                <circle cx="15" cy="8" r="1" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Laundry — Wash & Dry</span>
+                            <span class="addon-detail">We wash and dry per load</span>
+                            <span class="addon-price">$10 <small>per load</small></span>
+                        </div>
+                        <div class="addon-counter">
+                            <button class="counter-btn minus" data-action="minus" aria-label="Remove load">−</button>
+                            <span class="counter-val" id="laundryWD-count">0</span>
+                            <button class="counter-btn plus" data-action="plus" aria-label="Add load">+</button>
+                        </div>
+                    </div>
+                    <!-- Laundry: Wash, Dry & Fold -->
+                    <div class="addon-card" data-addon="laundryWDF">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect x="6" y="4" width="20" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="16" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13 16C14 14 18 14 19 16C18 18 14 18 13 16" stroke="currentColor" stroke-width="1"/>
+                                <circle cx="10" cy="8" r="1.5" stroke="currentColor" stroke-width="1"/>
+                                <circle cx="15" cy="8" r="1" stroke="currentColor" stroke-width="1"/>
+                                <path d="M22 26L26 22" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Laundry — Wash, Dry & Fold</span>
+                            <span class="addon-detail">Full service per load</span>
+                            <span class="addon-price">$15 <small>per load</small></span>
+                        </div>
+                        <div class="addon-counter">
+                            <button class="counter-btn minus" data-action="minus" aria-label="Remove load">−</button>
+                            <span class="counter-val" id="laundryWDF-count">0</span>
+                            <button class="counter-btn plus" data-action="plus" aria-label="Add load">+</button>
+                        </div>
+                    </div>
+                    <!-- Interior Windows -->
+                    <div class="addon-card" data-addon="windows">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect x="6" y="6" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M16 6V26M6 16H26" stroke="currentColor" stroke-width="1.2"/>
+                                <path d="M10 10L14 14M18 10L22 14" stroke="currentColor" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Interior Windows</span>
+                            <span class="addon-detail">Interior side cleaned</span>
+                            <span class="addon-price">$5 <small>each</small></span>
+                        </div>
+                        <div class="addon-counter">
+                            <button class="counter-btn minus" data-action="minus" aria-label="Remove window">−</button>
+                            <span class="counter-val" id="windows-count">0</span>
+                            <button class="counter-btn plus" data-action="plus" aria-label="Add window">+</button>
+                        </div>
+                    </div>
+                    <!-- Inside Refrigerator -->
+                    <div class="addon-card addon-toggle" data-addon="fridge">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect x="8" y="3" width="16" height="26" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M8 14H24" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M20 8V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M20 18V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Inside Refrigerator</span>
+                            <span class="addon-detail">Deep clean interior</span>
+                            <span class="addon-price">$25</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="fridge-toggle">
+                            <span class="toggle-track"></span>
+                        </label>
+                    </div>
+                    <!-- Inside Oven -->
+                    <div class="addon-card addon-toggle" data-addon="oven">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect x="4" y="6" width="24" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M4 12H28" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="8" y="16" width="16" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/>
+                                <circle cx="10" cy="9" r="1" fill="currentColor" opacity="0.5"/>
+                                <circle cx="16" cy="9" r="1" fill="currentColor" opacity="0.5"/>
+                                <circle cx="22" cy="9" r="1" fill="currentColor" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <span class="addon-name">Inside Oven</span>
+                            <span class="addon-detail">Deep clean interior</span>
+                            <span class="addon-price">$25</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="oven-toggle">
+                            <span class="toggle-track"></span>
+                        </label>
+                    </div>
+                </div>
+                <p class="declutter-note">
+                    <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M10 9V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="6.5" r="1" fill="currentColor"/></svg>
+                    Decluttering fee may apply if needed to access cleaning areas <span>($25 per 15 minutes)</span>
+                </p>
+            </div>
+
+            <!-- Step 3: Frequency -->
+            <div class="builder-step" data-step="3">
+                <div class="step-label"><span class="step-num">3</span> How Often?</div>
+                <div class="freq-options">
+                    <label class="freq-card">
+                        <input type="radio" name="freq" value="weekly" checked>
+                        <div class="freq-inner">
+                            <svg viewBox="0 0 28 28" fill="none">
+                                <rect x="3" y="5" width="22" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M3 11H25" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M9 3V7M19 3V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="9" cy="17" r="1.5" fill="currentColor" opacity="0.5"/>
+                                <circle cx="14" cy="17" r="1.5" fill="currentColor" opacity="0.5"/>
+                                <circle cx="19" cy="17" r="1.5" fill="currentColor" opacity="0.5"/>
+                            </svg>
+                            <span class="freq-label">Weekly</span>
+                            <span class="freq-desc">Recurring service</span>
+                        </div>
+                    </label>
+                    <label class="freq-card">
+                        <input type="radio" name="freq" value="onetime">
+                        <div class="freq-inner">
+                            <svg viewBox="0 0 28 28" fill="none">
+                                <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M14 8V14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span class="freq-label">One-Time</span>
+                            <span class="freq-desc">Single visit (+$50 fee)</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Total -->
+            <div class="builder-total">
+                <div class="total-breakdown" id="breakdown">
+                    <!-- Filled by JS -->
+                </div>
+                <div class="total-line">
+                    <span class="total-label">Your Estimated Total</span>
+                    <span class="total-amount" id="totalAmount">$80</span>
+                    <span class="total-freq" id="totalFreq">per visit</span>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg" id="openConsultation">Book a Consultation</button>
+                <p class="total-note">Final pricing confirmed after your personalized consultation</p>
+            </div>
+        </div>
+
+        <!-- Decorative vine divider -->
+        <div class="vine-divider" aria-hidden="true">
+            <svg viewBox="0 0 600 40" fill="none">
+                <path d="M0 20 Q150 5 300 20 Q450 35 600 20" stroke="var(--sage)" stroke-width="1" fill="none"/>
+                <path d="M120 16C115 10 118 4 124 3C130 2 131 9 126 13" stroke="var(--sage)" stroke-width="0.8" fill="var(--sage-light)" fill-opacity="0.3"/>
+                <path d="M300 22C305 28 302 34 296 35C290 36 289 29 294 25" stroke="var(--sage)" stroke-width="0.8" fill="var(--sage-light)" fill-opacity="0.3"/>
+                <path d="M480 16C475 10 478 4 484 3C490 2 491 9 486 13" stroke="var(--sage)" stroke-width="0.8" fill="var(--sage-light)" fill-opacity="0.3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="section-header">
+            <span class="section-tag">The Process</span>
+            <h2 class="section-title">How It Works</h2>
+        </div>
+        <div class="steps-row">
+            <div class="step-card" data-aos="1">
+                <div class="step-card-num">01</div>
+                <div class="step-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M16 16H32M16 22H28M16 28H24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Browse Services</h3>
+                <p>Explore our base cleaning packages and optional add-ons above</p>
+            </div>
+            <div class="step-connector" aria-hidden="true">
+                <svg viewBox="0 0 40 20"><path d="M0 10H40M32 4L40 10L32 16" stroke="var(--sage)" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <div class="step-card" data-aos="2">
+                <div class="step-card-num">02</div>
+                <div class="step-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M17 24L22 29L31 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Build Your Package</h3>
+                <p>Use the pricing builder to select exactly what your home needs</p>
+            </div>
+            <div class="step-connector" aria-hidden="true">
+                <svg viewBox="0 0 40 20"><path d="M0 10H40M32 4L40 10L32 16" stroke="var(--sage)" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <div class="step-card" data-aos="3">
+                <div class="step-card-num">03</div>
+                <div class="step-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M8 36V14L24 6L40 14V36L24 42L8 36Z" stroke="currentColor" stroke-width="1.8" fill="none"/>
+                        <path d="M24 6V42" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+                        <path d="M8 14L24 22L40 14" stroke="currentColor" stroke-width="1.2"/>
+                    </svg>
+                </div>
+                <h3>Book a Consultation</h3>
+                <p>We'll walk through your home together and finalize your perfect plan</p>
+            </div>
+            <div class="step-connector" aria-hidden="true">
+                <svg viewBox="0 0 40 20"><path d="M0 10H40M32 4L40 10L32 16" stroke="var(--sage)" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <div class="step-card" data-aos="4">
+                <div class="step-card-num">04</div>
+                <div class="step-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M24 8C18 8 8 14 8 24C8 34 18 40 24 40C30 40 40 34 40 24C40 14 30 8 24 8Z" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M24 18V24H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M18 32C20 34 22 35 24 35C26 35 28 34 30 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Enjoy Your Home</h3>
+                <p>Relax in a clean, restful space — we'll handle the rest</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Clean Rotation -->
+    <section class="section deep-clean-section" id="deep-clean">
+        <div class="deep-clean-layout">
+            <div class="deep-clean-text">
+                <span class="section-tag">The Rotation</span>
+                <h2 class="section-title">Deep Clean Add-On</h2>
+                <p class="deep-clean-intro">For just <strong>$25/week</strong>, we add one deep-focus area to every visit. Over four weeks, your entire home gets elevated attention — then the cycle repeats.</p>
+                <p class="deep-clean-tagline">Keeping your home consistently elevated.</p>
+            </div>
+            <div class="rotation-cards">
+                <div class="rotation-card" data-week="1">
+                    <div class="rotation-week">Week 1</div>
+                    <div class="rotation-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <path d="M8 32H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M8 32V8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 28H16M12 24H20M12 20H18" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h4>Baseboards</h4>
+                    <p>Every baseboard wiped and refreshed throughout the home</p>
+                </div>
+                <div class="rotation-card" data-week="2">
+                    <div class="rotation-week">Week 2</div>
+                    <div class="rotation-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="10" width="24" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 10V26M16 10V26M20 10V26M24 10V26M28 10V26" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h4>Blinds, Vents & Cobwebs</h4>
+                    <p>Reachable blinds, vents dusted, and cobwebs cleared</p>
+                </div>
+                <div class="rotation-card" data-week="3">
+                    <div class="rotation-week">Week 3</div>
+                    <div class="rotation-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="12" y="6" width="16" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="24" cy="20" r="1.5" fill="currentColor"/>
+                            <path d="M8 8H12M8 32H12M28 8H32M28 32H32" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h4>Doors & Frames</h4>
+                    <p>Door surfaces and frames wiped clean of dust and marks</p>
+                </div>
+                <div class="rotation-card" data-week="4">
+                    <div class="rotation-week">Week 4</div>
+                    <div class="rotation-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="12" y="14" width="16" height="10" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M20 14V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <rect x="16" y="28" width="8" height="4" rx="1" stroke="currentColor" stroke-width="1.2"/>
+                        </svg>
+                    </div>
+                    <h4>Handles & Switch Plates</h4>
+                    <p>Every handle and switch plate sanitized throughout home</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy / What to Expect -->
+    <section class="section policy" id="policy">
+        <div class="policy-layout">
+            <div class="policy-header">
+                <span class="section-tag">Good to Know</span>
+                <h2 class="section-title">Things to Consider</h2>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-item">
+                    <div class="policy-leaf" aria-hidden="true">
+                        <svg viewBox="0 0 24 32" fill="none">
+                            <path d="M12 30V14C12 14 4 12 4 6C4 0 12 2 12 2C12 2 20 0 20 6C20 12 12 14 12 14Z" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <p>Weekly cleaning keeps your home fresh + maintained</p>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-leaf" aria-hidden="true">
+                        <svg viewBox="0 0 24 32" fill="none">
+                            <path d="M12 30V14C12 14 4 12 4 6C4 0 12 2 12 2C12 2 20 0 20 6C20 12 12 14 12 14Z" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <p>Add-ons are always optional and may be requested anytime</p>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-leaf" aria-hidden="true">
+                        <svg viewBox="0 0 24 32" fill="none">
+                            <path d="M12 30V14C12 14 4 12 4 6C4 0 12 2 12 2C12 2 20 0 20 6C20 12 12 14 12 14Z" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <p>Decluttering fee may apply if needed to access cleaning areas</p>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-leaf" aria-hidden="true">
+                        <svg viewBox="0 0 24 32" fill="none">
+                            <path d="M12 30V14C12 14 4 12 4 6C4 0 12 2 12 2C12 2 20 0 20 6C20 12 12 14 12 14Z" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <p>Personal items and valuables should be put away before arrival</p>
+                </div>
+                <div class="policy-item policy-heart">
+                    <div class="policy-leaf" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 21C12 21 3 15 3 9C3 6 5.5 4 8 4C9.5 4 11 5 12 6.5C13 5 14.5 4 16 4C18.5 4 21 6 21 9C21 15 12 21 12 21Z" stroke="var(--sage)" stroke-width="1.2" fill="var(--sage-light)" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <p>I will always respect your home, pets, and belongings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="contact-layout">
+            <div class="contact-text">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Book Your<br>Consultation</h2>
+                <p>Ready to experience a truly restful home? Send us a message and we'll schedule a walkthrough to build your perfect cleaning plan together.</p>
+                <div class="contact-direct">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M2 7L12 14L22 7" stroke="currentColor" stroke-width="1.5"/></svg>
+                        <a href="mailto:ChristinaFancy6@gmail.com">ChristinaFancy6@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultModal">
+        <div class="modal">
+            <button class="modal-close" id="closeModal" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="modal-header">
+                <h3 class="modal-title">Your Cleaning Package</h3>
+                <p class="modal-sub">Review your selections below, then send to book your consultation.</p>
+            </div>
+            <div class="modal-summary" id="modalSummary">
+                <!-- Filled by JS -->
+            </div>
+            <div class="modal-total-line">
+                <span>Estimated Total</span>
+                <span class="modal-total-amount" id="modalTotal">$80</span>
+                <span class="modal-total-freq" id="modalFreq">per visit / weekly</span>
+            </div>
+            <form class="modal-form" id="modalForm" action="https://formspree.io/f/mzdayjnv" method="POST">
+                <input type="hidden" name="_subject" value="New Consultation Request — H&L Cleaning Co.">
+                <input type="hidden" name="selected_package" id="modalPackageInput" value="">
+                <div class="form-group">
+                    <label for="modal-name">Your Name</label>
+                    <input type="text" id="modal-name" name="name" required placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">Your Email</label>
+                    <input type="email" id="modal-email" name="email" required placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">Phone Number</label>
+                    <input type="tel" id="modal-phone" name="phone" required placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">Anything else we should know?</label>
+                    <textarea id="modal-message" name="message" rows="3" placeholder="Square footage, pets, special requests..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-full">Send & Book Consultation</button>
+                <p class="form-note">We'll call you within 24 hours to schedule your walkthrough.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <svg class="footer-logo-icon" viewBox="0 0 40 36" fill="none">
+                    <path d="M20 2L2 18H8V34H32V18H38L20 2Z" stroke="currentColor" stroke-width="1.8" fill="none"/>
+                    <path d="M16 34V22H24V34" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M19 11C19 10 20 9 20 9C20 9 21 10 21 11C21 12 20 13 20 13C20 13 19 12 19 11Z" fill="currentColor" opacity="0.6"/>
+                </svg>
+                <span class="footer-name">H&L Cleaning Co.</span>
+            </div>
+            <p class="footer-tagline">I'm honored to help you keep your home clean and restful.</p>
+            <div class="footer-bottom">
+                <span class="footer-location">Arkansas</span>
+                <span class="footer-divider">·</span>
+                <a href="mailto:ChristinaFancy6@gmail.com">ChristinaFancy6@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-vine" aria-hidden="true">
+            <svg viewBox="0 0 800 50" fill="none">
+                <path d="M0 25 Q200 5 400 25 Q600 45 800 25" stroke="var(--sage-light)" stroke-width="1" fill="none" opacity="0.4"/>
+                <path d="M200 18C195 12 198 6 204 5C210 4 211 10 206 14" stroke="var(--sage-light)" stroke-width="0.8" fill="var(--sage-light)" fill-opacity="0.15"/>
+                <path d="M600 30C605 36 602 42 596 43C590 44 589 38 594 34" stroke="var(--sage-light)" stroke-width="0.8" fill="var(--sage-light)" fill-opacity="0.15"/>
+            </svg>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
