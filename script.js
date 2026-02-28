@@ -251,6 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         modal.classList.remove('open');
         document.body.style.overflow = '';
+        // Reset to form state if success panel is showing
+        if (formSuccess && formSuccess.classList.contains('active')) {
+            resetModalToForm();
+        }
     }
 
     openBtn.addEventListener('click', openModal);
@@ -297,12 +301,104 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Initial render ----
     renderBreakdown();
 
-    // ---- Form submission feedback ----
+    // ---- AJAX form submission (no redirect) ----
+    const formSuccess = document.getElementById('formSuccess');
+    const successCloseBtn = document.getElementById('successCloseBtn');
+    let autoCloseTimer = null;
+
+    function showSuccessPanel() {
+        const modalHeader = modal.querySelector('.modal-header');
+        const modalSummaryEl = modal.querySelector('.modal-summary');
+        const modalTotalLine = modal.querySelector('.modal-total-line');
+        const modalForm = modal.querySelector('.modal-form');
+
+        // Fade out form content
+        modalHeader.classList.add('hiding');
+        modalSummaryEl.classList.add('hiding');
+        modalTotalLine.classList.add('hiding');
+        modalForm.classList.add('hiding');
+
+        setTimeout(() => {
+            modalHeader.style.display = 'none';
+            modalSummaryEl.style.display = 'none';
+            modalTotalLine.style.display = 'none';
+            modalForm.style.display = 'none';
+
+            // Show success panel
+            formSuccess.classList.add('active');
+
+            // Auto-close after 4 seconds
+            autoCloseTimer = setTimeout(() => {
+                resetModalToForm();
+                closeModal();
+            }, 4000);
+        }, 300);
+    }
+
+    function resetModalToForm() {
+        if (autoCloseTimer) {
+            clearTimeout(autoCloseTimer);
+            autoCloseTimer = null;
+        }
+
+        const modalHeader = modal.querySelector('.modal-header');
+        const modalSummaryEl = modal.querySelector('.modal-summary');
+        const modalTotalLine = modal.querySelector('.modal-total-line');
+        const modalForm = modal.querySelector('.modal-form');
+
+        // Hide success, restore form elements
+        formSuccess.classList.remove('active');
+
+        modalHeader.classList.remove('hiding');
+        modalSummaryEl.classList.remove('hiding');
+        modalTotalLine.classList.remove('hiding');
+        modalForm.classList.remove('hiding');
+
+        modalHeader.style.display = '';
+        modalSummaryEl.style.display = '';
+        modalTotalLine.style.display = '';
+        modalForm.style.display = '';
+
+        // Reset button state
+        const btn = modalForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Send & Book Consultation';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+    }
+
+    successCloseBtn.addEventListener('click', () => {
+        resetModalToForm();
+        closeModal();
+    });
+
     document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
             btn.textContent = 'Sending...';
             btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    showSuccessPanel();
+                } else {
+                    btn.textContent = 'Error — Try Again';
+                    btn.style.opacity = '1';
+                    btn.disabled = false;
+                }
+            } catch {
+                btn.textContent = 'Error — Try Again';
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }
         });
     });
 });

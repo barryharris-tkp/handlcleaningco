@@ -1318,6 +1318,73 @@ input, textarea, select { font: inherit; }
     .modal { padding: 28px 20px; }
 }
 
+/* ---- Form Success Confirmation ---- */
+.form-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 24px;
+}
+.form-success.active {
+    display: flex;
+    animation: fadeUp 0.5s ease-out both;
+}
+.modal-form.hiding {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+.modal-header.hiding,
+.modal-summary.hiding,
+.modal-total-line.hiding {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+.success-checkmark {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+}
+.success-circle {
+    stroke-dasharray: 227;
+    stroke-dashoffset: 227;
+    animation: drawCircle 0.6s ease-out 0.3s forwards;
+}
+.success-check {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: drawCheck 0.4s ease-out 0.8s forwards;
+}
+
+@keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+}
+@keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+}
+
+.success-heading {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--bark);
+    margin-bottom: 8px;
+}
+.success-sub {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+.success-close-btn {
+    min-width: 140px;
+}
+
 /* ---- Scroll reveal helper ---- */
 .reveal {
     opacity: 0;
