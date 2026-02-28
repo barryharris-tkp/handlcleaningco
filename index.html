@@ -94,6 +94,7 @@
             <span class="section-tag">Services & Pricing</span>
             <h2 class="section-title">Build Your Cleaning Package</h2>
             <p class="section-sub">Select your base service and add exactly what you need. Like building the perfect cup of tea — only what you want, nothing you don't.</p>
+            <p class="section-hint" id="dirtyHint">Select your services below and watch the window clean itself</p>
         </div>
 
         <div class="builder">
@@ -149,6 +150,7 @@
                 <div class="step-label"><span class="step-num">2</span> Add What You Need</div>
                 <p class="step-desc">Customize your clean with optional add-ons. Add or remove anytime.</p>
                 <div class="addons-grid">
+                    <div class="addons-section-label">Weekly Add-Ons</div>
                     <!-- Additional Rooms -->
                     <div class="addon-card" data-addon="rooms">
                         <div class="addon-icon">
@@ -255,6 +257,7 @@
                             <button class="counter-btn plus" data-action="plus" aria-label="Add load">+</button>
                         </div>
                     </div>
+                    <div class="addons-section-label">Seasonal Add-Ons</div>
                     <!-- Interior Windows -->
                     <div class="addon-card" data-addon="windows">
                         <div class="addon-icon">
@@ -644,8 +647,12 @@
             <p class="footer-tagline">I'm honored to help you keep your home clean and restful.</p>
             <div class="footer-bottom">
                 <span class="footer-location">Arkansas</span>
-                <span class="footer-divider">·</span>
+                <span class="footer-divider">&middot;</span>
                 <a href="mailto:ChristinaFancy6@gmail.com">ChristinaFancy6@gmail.com</a>
+                <span class="footer-divider">&middot;</span>
+                <a href="privacy.html">Privacy Policy</a>
+                <span class="footer-divider">&middot;</span>
+                <a href="terms.html">Terms of Service</a>
             </div>
         </div>
         <div class="footer-vine" aria-hidden="true">
@@ -657,6 +664,8 @@
         </div>
     </footer>
 
+    <canvas id="dirtyWindowCanvas"></canvas>
     <script src="script.js"></script>
+    <script src="dirty-window.js"></script>
 </body>
 </html>

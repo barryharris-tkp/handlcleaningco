@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         renderBreakdown();
         updatePackageSummary(total);
+        document.dispatchEvent(new CustomEvent('packageUpdate', { detail: state }));
     }
 
     function calcTotal() {
@@ -300,6 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Initial render ----
     renderBreakdown();
+    document.dispatchEvent(new CustomEvent('packageUpdate', { detail: state }));
 
     // ---- AJAX form submission (no redirect) ----
     const formSuccess = document.getElementById('formSuccess');
