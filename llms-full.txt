@@ -1,0 +1,101 @@
+# H&L Cleaning Co. — Full Site Documentation
+
+> H&L Cleaning Co. is a residential home cleaning service in Central Arkansas offering weekly and one-time cleaning with a fully customizable pricing builder. Owned and operated by Christina, the business focuses on personalized, thoughtful cleaning that makes homes restful and comfortable.
+
+## Business Overview
+
+H&L Cleaning Co. provides professional residential cleaning services in Central Arkansas. The company philosophy centers on the idea that "a clean home is a restful home." Christina personally handles consultations and cleaning, ensuring a consistent, trustworthy experience. The business serves homes of all sizes with transparent, upfront pricing.
+
+## Website Structure
+
+The website is a single-page application (plus legal pages) built with vanilla HTML, CSS, and JavaScript — no frameworks or build tools. It features:
+
+- A fixed navigation bar with mobile hamburger menu
+- A hero section with botanical SVG decorations
+- An interactive 3-step pricing builder
+- A "How It Works" process section (4 steps)
+- A deep clean rotation explainer
+- A policy/expectations section
+- A contact section with email
+- A consultation booking modal with form submission via Formspree
+- An interactive "dirty window" canvas overlay that cleans as users build their package
+- Floating botanical SVG decorations throughout
+
+## Pricing Builder Details
+
+### Step 1: Base Service
+The base service includes cleaning of kitchen, living room, and dining room (mopped, wiped, and refreshed).
+
+| Tier | Square Footage | Price |
+|------|---------------|-------|
+| Standard | Under 2,200 sq ft | $80 |
+| Large | 2,200 – 3,000 sq ft | $100 |
+| Custom | Over 3,000 sq ft | Contact for estimate |
+
+### Step 2: Add-Ons
+
+#### Weekly Add-Ons
+| Service | Price | Unit |
+|---------|-------|------|
+| Additional Rooms (bedroom, office, etc.) | $12 | per room |
+| Bathrooms (full clean, top to bottom) | $20 | per bathroom |
+| Deep Clean Rotation (4-week rotating focus) | $25 | per week |
+| Laundry — Wash & Dry | $10 | per load |
+| Laundry — Wash, Dry & Fold | $15 | per load |
+
+#### Seasonal Add-Ons
+| Service | Price | Unit |
+|---------|-------|------|
+| Interior Windows | $5 | per window |
+| Inside Refrigerator | $25 | flat |
+| Inside Oven | $25 | flat |
+
+#### Additional Fees
+- **Decluttering Fee**: $25 per 15 minutes (applies if decluttering is needed to access cleaning areas)
+- **One-Time Visit Fee**: +$50 (for non-recurring visits)
+
+### Step 3: Frequency
+- **Weekly**: Recurring service at standard pricing
+- **One-Time**: Single visit with a $50 surcharge
+
+## Deep Clean Rotation
+
+The deep clean rotation is a $25/week add-on that adds one deep-focus area to every weekly visit on a 4-week cycle:
+
+- **Week 1 — Baseboards**: Every baseboard wiped and refreshed throughout the home
+- **Week 2 — Blinds, Vents & Cobwebs**: Reachable blinds and vents dusted, cobwebs cleared
+- **Week 3 — Doors & Frames**: Door surfaces and frames wiped clean of dust and marks
+- **Week 4 — Handles & Switch Plates**: Every handle and switch plate sanitized throughout home
+
+The cycle then repeats, keeping the entire home consistently elevated.
+
+## Consultation Process
+
+1. **Browse Services**: Explore base cleaning packages and optional add-ons
+2. **Build Your Package**: Use the pricing builder to select exactly what the home needs
+3. **Book a Consultation**: Schedule a walkthrough to finalize the perfect plan
+4. **Enjoy Your Home**: Relax in a clean, restful space
+
+Consultations are booked via a modal form that captures name, email, phone number, and optional notes. Form submissions go to ChristinaFancy6@gmail.com via Formspree. Christina calls within 24 hours to schedule a walkthrough.
+
+## Policies
+
+- Weekly cleaning keeps the home fresh and maintained
+- Add-ons are always optional and may be requested anytime
+- Decluttering fee may apply if needed to access cleaning areas
+- Personal items and valuables should be put away before arrival
+- Christina will always respect the home, pets, and belongings
+
+## Contact Information
+
+- **Email**: ChristinaFancy6@gmail.com
+- **Service Area**: Central Arkansas
+- **Website**: handlcleaningco.com
+
+## Technical Details
+
+- **Stack**: Vanilla HTML5, CSS3, JavaScript (no frameworks)
+- **Fonts**: Cormorant Garamond (display), Jost (body) via Google Fonts
+- **Form Backend**: Formspree (https://formspree.io/f/xykdvbad)
+- **Hosting**: Hostinger
+- **Design**: Botanical/cozy aesthetic with sage green (#7a9a7e) and warm cream (#faf8f4) color palette

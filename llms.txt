@@ -1,0 +1,28 @@
+# H&L Cleaning Co.
+
+> H&L Cleaning Co. is a residential home cleaning service based in Central Arkansas. The website allows visitors to build a custom cleaning package with a visual pricing builder, learn about services, and book a consultation.
+
+H&L Cleaning Co. offers weekly and one-time home cleaning with customizable add-ons. The site is a single-page marketing website with an interactive pricing builder where users select a base service by square footage, add rooms, bathrooms, laundry, window cleaning, and specialty services like deep clean rotation, refrigerator, and oven cleaning. Pricing is transparent and updates in real time.
+
+The business is owned and operated by Christina, who provides personalized, thoughtful cleaning with a focus on making homes restful and comfortable.
+
+## Site Pages
+
+- [Home](https://handlcleaningco.com/): Main landing page with pricing builder, services, how it works, and consultation booking
+- [Privacy Policy](https://handlcleaningco.com/privacy.html): Privacy policy for the website
+- [Terms of Service](https://handlcleaningco.com/terms.html): Terms of service for the website
+
+## Services
+
+- [Pricing Builder](https://handlcleaningco.com/#services): Interactive package builder with base pricing, add-ons, and frequency selection
+- [Deep Clean Rotation](https://handlcleaningco.com/#deep-clean): 4-week rotating deep clean add-on covering baseboards, blinds, doors, and handles
+- [Book a Consultation](https://handlcleaningco.com/#contact): Contact form to schedule a walkthrough and finalize a cleaning plan
+
+## Key Information
+
+- **Location**: Central Arkansas
+- **Contact**: ChristinaFancy6@gmail.com
+- **Base Pricing**: $80 (under 2,200 sq ft), $100 (2,200-3,000 sq ft), custom (over 3,000 sq ft)
+- **Add-Ons**: Additional rooms ($12), bathrooms ($20), deep clean ($25/wk), laundry wash & dry ($10/load), laundry wash/dry/fold ($15/load), interior windows ($5 each), inside refrigerator ($25), inside oven ($25)
+- **Frequency**: Weekly (recurring) or one-time (+$50 fee)
+- **Decluttering Fee**: $25 per 15 minutes if needed
