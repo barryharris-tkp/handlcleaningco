@@ -24,7 +24,7 @@ This phase builds the brain of Sonny — a background memory worker that process
   - Create prompt templates in `backend/prompts/` as plain text files: `clean_transcript.txt` and `summarize_session.txt`. Load them at runtime. This keeps prompts editable without code changes.
   - *(Completed: transcript_processor.py created with all 4 functions. Prompt templates created in backend/prompts/. 11 unit tests pass covering load, format, clean, summarize, retry logic, and markdown fence stripping.)*
 
-- [ ] Create the Obsidian note writer service. Build `backend/services/note_writer.py`:
+- [x] Create the Obsidian note writer service. Build `backend/services/note_writer.py`:
   - `write_note(session_id: str, summary: dict, clean_transcript: str) -> str` — writes a structured Markdown note to the Obsidian vault at `/home/barryharris/Documents/SonnyVault/`
   - Note filename format: `{session_id}.md` (e.g., `2026-04-07-201021.md`)
   - Note format must match the design doc. Use YAML frontmatter:
@@ -40,6 +40,7 @@ This phase builds the brain of Sonny — a background memory worker that process
   - Note body sections: `# {title}`, `## Summary`, `## Key Points` (bulleted list), `## Decisions` (bulleted list, or "None noted" if empty), `## Next Steps` (bulleted list, or "None noted" if empty), `## Full Transcript` (the cleaned transcript in a collapsible details block or as plain text)
   - Create the vault directory if it doesn't exist
   - Return the path to the created note file
+  - *(Completed: note_writer.py created with write_note function. Outputs structured Obsidian notes with YAML frontmatter, all required sections, and collapsible transcript. 10 unit tests pass covering file creation, frontmatter, body sections, tag ordering, empty lists, vault directory creation, and edge cases.)*
 
 - [ ] Build the memory worker as a background process. Create `backend/services/memory_worker.py`:
   - The worker watches `data/sessions/` for completed sessions
