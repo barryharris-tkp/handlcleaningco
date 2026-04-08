@@ -68,7 +68,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
     - After a voice session ends, if the session had more than 2 turns, show a subtle prompt asking the user to name the session (auto-dismiss after 10 seconds, use a default name like the date/time if dismissed)
   - **Completed 2026-04-08**: Added metadata persistence via `.metadata.json`, `PATCH /api/sessions/{id}` for rename, `DELETE /api/sessions/{id}` with full cleanup (JSONL, metadata, processing state, ChromaDB, Obsidian note). Updated `GET /api/sessions` to return session names. Added `renameSession()` and `deleteSession()` to `lib/api.ts`. Updated `SessionHistory.tsx` with pencil icon for inline rename (input on click, save on blur/Enter, cancel on Escape) and trash icon with `window.confirm` for delete. Updated `App.tsx` with post-session naming prompt (shows for sessions >2 turns, auto-dismisses after 10s with date/time default).
 
-- [ ] Create a settings panel for configuration. Create `frontend/src/components/SettingsPanel.tsx` — read existing components to match patterns:
+- [x] Create a settings panel for configuration. Create `frontend/src/components/SettingsPanel.tsx` — read existing components to match patterns:
   - Display as a slide-out panel or modal (accessible from a gear icon in the header)
   - Settings to expose:
     - **Gemini API Key**: text input (masked), saved to localStorage. Update the VoiceAgent to read the API key from localStorage first, falling back to `import.meta.env.VITE_GEMINI_API_KEY`
@@ -78,6 +78,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
     - **Vault path**: display only (shows the configured Obsidian vault path from a new `GET /api/config` endpoint)
   - Add `GET /api/config` endpoint to `backend/main.py` returning: vault path, sessions path, chroma path, Ollama model name
   - Update `App.tsx` to include the settings gear icon in the header and render the SettingsPanel
+  - **Completed 2026-04-08**: Created `SettingsPanel.tsx` as a slide-out panel with spring animation. Includes masked API key input (toggle visibility, saves on blur), voice dropdown (8 Gemini voices, saves on change), editable system prompt textarea (saves on blur), backend status section showing API health (online/offline), ChromaDB doc count, and Ollama model name, plus Obsidian vault path display. Added `GET /api/config` endpoint returning vault_path, sessions_path, chroma_path, ollama_model. Added `getHealth()` and `getConfig()` to `lib/api.ts`. Updated `App.tsx` with gear icon in header and AnimatePresence-wrapped SettingsPanel. VoiceAgent already reads API key and voice from localStorage (done in task 2).
 
 - [ ] Final integration testing and startup script update:
   - Update `start.sh` to print a cleaner startup banner showing all services and their ports
