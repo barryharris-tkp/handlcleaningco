@@ -80,7 +80,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
   - Update `App.tsx` to include the settings gear icon in the header and render the SettingsPanel
   - **Completed 2026-04-08**: Created `SettingsPanel.tsx` as a slide-out panel with spring animation. Includes masked API key input (toggle visibility, saves on blur), voice dropdown (8 Gemini voices, saves on change), editable system prompt textarea (saves on blur), backend status section showing API health (online/offline), ChromaDB doc count, and Ollama model name, plus Obsidian vault path display. Added `GET /api/config` endpoint returning vault_path, sessions_path, chroma_path, ollama_model. Added `getHealth()` and `getConfig()` to `lib/api.ts`. Updated `App.tsx` with gear icon in header and AnimatePresence-wrapped SettingsPanel. VoiceAgent already reads API key and voice from localStorage (done in task 2).
 
-- [ ] Final integration testing and startup script update:
+- [x] Final integration testing and startup script update:
   - Update `start.sh` to print a cleaner startup banner showing all services and their ports
   - Start the full system (backend + worker + frontend)
   - Test the complete voice-to-knowledge loop:
@@ -99,3 +99,4 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
     - Error states when Ollama is slow to respond
     - Frontend state management when switching between tabs during an active voice session
   - Stop any background servers started for testing
+  - **Completed 2026-04-08**: Updated `start.sh` with a styled startup banner (colored box art, service table with ports, dependency status for Ollama/ChromaDB/Obsidian, graceful shutdown handler). Ran all 69 backend unit tests (all passing). Started full stack (backend :8000, worker, frontend :5173) and ran 25-point integration test covering: health/config endpoints, session CRUD, turn logging, session listing with turn counts and status, session detail/transcript retrieval, processing status, session rename with metadata persistence, context retrieval from ChromaDB, semantic search with stats, session delete with full cleanup, Vite proxy forwarding, and frontend production build. 24/25 passed (1 false negative in test script — HTTP 404 confirmed correct). Reviewed code for: race conditions (worker uses file-watch delay — safe), Ollama error handling (errors caught and surfaced as status badges), tab switching during active sessions (VoiceAgent rendered outside tab area — no unmount issues). All servers stopped after testing.
