@@ -40,7 +40,7 @@ This phase adds the retrieval layer to Sonny — the ability to search past conv
   - All search endpoints should handle the case where ChromaDB has no data gracefully (return empty results, not errors)
   - *Completed: 3 endpoints added to main.py, 7 tests in test_search_endpoints.py — all 59 tests pass.*
 
-- [ ] Build the search UI in the frontend. Create new components in `frontend/src/` — read the existing components first (`App.tsx`, `TranscriptPanel.tsx`) to match the established styling patterns and dark theme:
+- [x] Build the search UI in the frontend. Create new components in `frontend/src/` — read the existing components first (`App.tsx`, `TranscriptPanel.tsx`) to match the established styling patterns and dark theme:
   - `components/SearchPanel.tsx` — a search interface:
     - Search input field with a search icon, styled to match the dark theme
     - Results list showing: topic/title, summary snippet, date, relevance score (as a subtle indicator)
@@ -50,6 +50,7 @@ This phase adds the retrieval layer to Sonny — the ability to search past conv
     - Debounced search — trigger after 300ms of no typing (avoid hammering the API)
   - Add to `lib/api.ts`: `searchSessions(query: string, limit?: number)` and `getSearchStats()` fetch wrappers
   - Update `App.tsx` to add a toggle between the transcript view and the search view. Use a simple tab-style navigation at the top: "Conversation" (current transcript) | "Memory" (search). Keep the VoiceAgent floating button visible in both views.
+  - *Completed: SearchPanel.tsx created with debounced search, expandable results with score bars and tags, loading/empty states. API wrappers added to api.ts. App.tsx updated with Conversation|Memory tab nav. Vite build passes.*
 
 - [ ] Test the full retrieval pipeline end-to-end:
   - Start the backend and memory worker
