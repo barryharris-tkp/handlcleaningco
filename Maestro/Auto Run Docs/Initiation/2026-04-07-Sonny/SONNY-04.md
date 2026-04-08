@@ -55,7 +55,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
   - Update `App.tsx` navigation to add a third tab: "Conversation" | "Memory" | "History"
   - **Completed 2026-04-08**: Created `SessionHistory.tsx` with chronological session list, status badges, turn counts, expandable transcript viewer (reuses TranscriptPanel bubble styling), "Process Now" for unprocessed sessions, "View Note" for completed sessions. Updated `App.tsx` with third "History" tab. Updated backend `GET /api/sessions` to return `turn_count` and `status` per session. Added `getSessionDetail()`, `getSessionStatus()`, `processSession()`, `getNote()` to `lib/api.ts`.
 
-- [ ] Add session naming and management features:
+- [x] Add session naming and management features:
   - Backend — update `backend/main.py` (read it first):
     - `PATCH /api/sessions/{session_id}` — updates session metadata. For now, supports renaming: accepts `{"name": "..."}`. Store session metadata in a `data/sessions/.metadata.json` file (maps session_id to metadata dict with `name`, `created_at`, etc.)
     - `DELETE /api/sessions/{session_id}` — deletes a session's JSONL file, removes from metadata, removes from processing state, removes ChromaDB embedding, and deletes the Obsidian note if it exists. Return what was deleted.
@@ -66,6 +66,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
     - Add `lib/api.ts` functions: `renameSession(id, name)`, `deleteSession(id)`
   - Frontend — update `App.tsx`:
     - After a voice session ends, if the session had more than 2 turns, show a subtle prompt asking the user to name the session (auto-dismiss after 10 seconds, use a default name like the date/time if dismissed)
+  - **Completed 2026-04-08**: Added metadata persistence via `.metadata.json`, `PATCH /api/sessions/{id}` for rename, `DELETE /api/sessions/{id}` with full cleanup (JSONL, metadata, processing state, ChromaDB, Obsidian note). Updated `GET /api/sessions` to return session names. Added `renameSession()` and `deleteSession()` to `lib/api.ts`. Updated `SessionHistory.tsx` with pencil icon for inline rename (input on click, save on blur/Enter, cancel on Escape) and trash icon with `window.confirm` for delete. Updated `App.tsx` with post-session naming prompt (shows for sessions >2 turns, auto-dismisses after 10s with date/time default).
 
 - [ ] Create a settings panel for configuration. Create `frontend/src/components/SettingsPanel.tsx` — read existing components to match patterns:
   - Display as a slide-out panel or modal (accessible from a gear icon in the header)
