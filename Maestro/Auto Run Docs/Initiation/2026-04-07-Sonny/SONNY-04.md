@@ -31,7 +31,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
   - Truncate the total context to stay within `max_tokens` (rough estimate: 4 chars per token)
   - Add API endpoint `POST /api/context` in `backend/main.py` — accepts `{"query": "..."}`, returns `{"context": "...", "sources": [...]}`. The frontend will call this before starting a Gemini session or periodically during conversation to refresh context.
 
-- [ ] Add context injection to the voice agent. Modify `frontend/src/components/VoiceAgent.tsx` — read the current implementation first to understand the session lifecycle:
+- [x] Add context injection to the voice agent. Modify `frontend/src/components/VoiceAgent.tsx` — read the current implementation first to understand the session lifecycle:
   - Before connecting to Gemini, call `POST /api/context` with a general query (e.g., the current date + "conversation") to fetch any relevant recent context
   - Inject the retrieved context into the Gemini system instruction. Update the system prompt template to:
     ```
@@ -44,6 +44,7 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
   - Add `lib/api.ts` function: `getContext(query: string)` — calls the context endpoint
   - If context retrieval fails (network error, backend down), proceed without context — do not block the voice session from starting
   - During an active session, after every 3-4 user turns, refresh context by sending the most recent user message as a query. Update the local context state (this won't change the active Gemini session's system prompt, but store it for display or for the next reconnection).
+  - **Completed 2026-04-08**: Added `getContext()` to `lib/api.ts`, `buildSystemInstruction()` helper with context template, pre-session context fetch with graceful failure, periodic refresh every 3 user turns, localStorage support for API key (`sonny-gemini-key`), voice (`sonny-voice`), and custom system prompt (`sonny-system-prompt`).
 
 - [ ] Build the session history browser. Create `frontend/src/components/SessionHistory.tsx` — read the existing `SearchPanel.tsx` and `App.tsx` to match the established UI patterns:
   - Displays a chronological list of past sessions from `GET /api/sessions`
