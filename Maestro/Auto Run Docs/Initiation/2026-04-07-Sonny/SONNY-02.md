@@ -42,7 +42,7 @@ This phase builds the brain of Sonny — a background memory worker that process
   - Return the path to the created note file
   - *(Completed: note_writer.py created with write_note function. Outputs structured Obsidian notes with YAML frontmatter, all required sections, and collapsible transcript. 10 unit tests pass covering file creation, frontmatter, body sections, tag ordering, empty lists, vault directory creation, and edge cases.)*
 
-- [ ] Build the memory worker as a background process. Create `backend/services/memory_worker.py`:
+- [x] Build the memory worker as a background process. Create `backend/services/memory_worker.py`:
   - The worker watches `data/sessions/` for completed sessions
   - Track processing state using a simple JSON file: `data/sessions/.processing_state.json` — maps session_id to status (`pending`, `processing`, `completed`, `error`)
   - On startup, scan for any unprocessed sessions (session files that aren't in the state file or are marked `pending`)
@@ -58,6 +58,7 @@ This phase builds the brain of Sonny — a background memory worker that process
   - Add a configurable delay before processing a session (default 30 seconds after last modification) to avoid processing mid-conversation
   - Log all operations clearly to stdout for debugging
   - Create `backend/worker.py` as the entry point that runs the memory worker as a standalone process
+  - *(Completed: memory_worker.py created with state management, full processing pipeline, watchdog-based file watcher with configurable delay, and session deduplication. worker.py entry point created with env-configurable delay via SONNY_PROCESSING_DELAY. 19 unit tests pass covering state management, scan logic, pipeline execution, error handling, and watchdog event handling.)*
 
 - [ ] Add memory worker API endpoints and update the startup script:
   - Add to `backend/main.py`:
