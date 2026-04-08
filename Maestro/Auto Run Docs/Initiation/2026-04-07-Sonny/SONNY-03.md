@@ -25,7 +25,7 @@ This phase adds the retrieval layer to Sonny — the ability to search past conv
     - `get_stats() -> dict` — returns collection count and basic stats
   - Verify the store initializes correctly by running a quick test: add a dummy document, search for it, then delete it
 
-- [ ] Integrate the vector store into the memory worker pipeline. Modify `backend/services/memory_worker.py` to add an embedding step after note writing. Read the existing code first to understand the current pipeline flow:
+- [x] Integrate the vector store into the memory worker pipeline. Modify `backend/services/memory_worker.py` to add an embedding step after note writing. Read the existing code first to understand the current pipeline flow:
   - After step 6 (write Obsidian note), add step 6.5: embed the session summary into ChromaDB
   - The text to embed should be a combination of the title and summary from the summarization output (e.g., `"{title}. {summary}"`)
   - Store metadata: `topic`, `tags` (as comma-separated string), `created` date, `note_path`
