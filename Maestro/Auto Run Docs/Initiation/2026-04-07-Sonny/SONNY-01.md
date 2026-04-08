@@ -23,7 +23,7 @@ Sonny (S.O.N.N.Y) is a local-first AI voice system that turns conversations into
   - Set up Tailwind CSS with a dark color scheme as default. Use clean, modern dark theme variables.
   - Do NOT modify or delete `voice-agent-template/` or `sunny_system_design.md` — those are reference files
 
-- [ ] Create the Python FastAPI backend with turn logging API. All backend code goes in `backend/`. Read the turn format from `sunny_system_design.md` to understand the expected JSONL structure. Build:
+- [x] Create the Python FastAPI backend with turn logging API. All backend code goes in `backend/`. Read the turn format from `sunny_system_design.md` to understand the expected JSONL structure. Build:
   - `backend/main.py` — FastAPI app with CORS middleware (allow all origins for local dev) and these endpoints:
     - `GET /api/health` — returns `{"status": "ok"}`
     - `POST /api/sessions` — creates a new session. Accepts optional `{"name": "..."}`. Generates a session ID in the format `YYYY-MM-DD-HHmmss` (from current timestamp). Creates the JSONL file at `data/sessions/{session_id}.jsonl`. Returns `{"session_id": "...", "created_at": "..."}`
