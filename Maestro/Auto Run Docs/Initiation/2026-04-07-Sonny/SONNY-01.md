@@ -33,7 +33,7 @@ Sonny (S.O.N.N.Y) is a local-first AI voice system that turns conversations into
   - The `data/sessions/` path should be resolved relative to the project root (one level up from `backend/`), using a config constant
   - Include proper error handling (404 for missing sessions, etc.)
 
-- [ ] Port the voice agent into the frontend and enhance it with transcript capture. Read the existing `voice-agent-template/VoiceAgent.tsx` and `voice-agent-template/audio-utils.ts` carefully — reuse as much code as possible. Create these files in `frontend/src/`:
+- [x] Port the voice agent into the frontend and enhance it with transcript capture. Read the existing `voice-agent-template/VoiceAgent.tsx` and `voice-agent-template/audio-utils.ts` carefully — reuse as much code as possible. Create these files in `frontend/src/`:
   - `lib/audio-utils.ts` — copy directly from `voice-agent-template/audio-utils.ts`
   - `components/VoiceAgent.tsx` — adapted from the template with these changes:
     - Extract the Gemini session config to enable transcript capture. Add `inputAudioTranscription` to the live connect config if supported by the SDK, so user speech is transcribed by Gemini. Also keep `Modality.AUDIO` for responses but check if the server messages include text parts alongside audio — if they do, capture the text for logging.
