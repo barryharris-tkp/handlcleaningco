@@ -64,7 +64,7 @@ Sonny (S.O.N.N.Y) is a local-first AI voice system that turns conversations into
   - `index.css` — Tailwind base styles with dark theme defaults (dark background, light text)
   - Update `main.tsx` to render App
 
-- [ ] Create a startup script and verify the full system works end-to-end:
+- [x] Create a startup script and verify the full system works end-to-end:
   - Create `start.sh` at the project root that:
     - Starts the FastAPI backend: `cd backend && source .venv/bin/activate && uvicorn main:app --reload --port 8000 &`
     - Starts the Vite dev server: `cd frontend && npm run dev &`
