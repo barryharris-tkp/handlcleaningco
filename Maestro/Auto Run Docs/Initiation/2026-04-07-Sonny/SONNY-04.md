@@ -46,13 +46,14 @@ This is the Intelligence phase — Sonny becomes aware of its own memory. Past c
   - During an active session, after every 3-4 user turns, refresh context by sending the most recent user message as a query. Update the local context state (this won't change the active Gemini session's system prompt, but store it for display or for the next reconnection).
   - **Completed 2026-04-08**: Added `getContext()` to `lib/api.ts`, `buildSystemInstruction()` helper with context template, pre-session context fetch with graceful failure, periodic refresh every 3 user turns, localStorage support for API key (`sonny-gemini-key`), voice (`sonny-voice`), and custom system prompt (`sonny-system-prompt`).
 
-- [ ] Build the session history browser. Create `frontend/src/components/SessionHistory.tsx` — read the existing `SearchPanel.tsx` and `App.tsx` to match the established UI patterns:
+- [x] Build the session history browser. Create `frontend/src/components/SessionHistory.tsx` — read the existing `SearchPanel.tsx` and `App.tsx` to match the established UI patterns:
   - Displays a chronological list of past sessions from `GET /api/sessions`
   - Each session entry shows: session ID (formatted as a readable date/time), processing status badge (pending/processing/completed), number of turns
   - Clicking a session loads its full transcript from `GET /api/sessions/{id}` and displays it in a read-only transcript view (reuse the TranscriptPanel styling)
   - If a note exists for the session, show a link/button to view the generated summary (fetch from `GET /api/notes/{session_id}`)
   - Add a "Process Now" button for unprocessed sessions that calls `POST /api/sessions/{session_id}/process`
   - Update `App.tsx` navigation to add a third tab: "Conversation" | "Memory" | "History"
+  - **Completed 2026-04-08**: Created `SessionHistory.tsx` with chronological session list, status badges, turn counts, expandable transcript viewer (reuses TranscriptPanel bubble styling), "Process Now" for unprocessed sessions, "View Note" for completed sessions. Updated `App.tsx` with third "History" tab. Updated backend `GET /api/sessions` to return `turn_count` and `status` per session. Added `getSessionDetail()`, `getSessionStatus()`, `processSession()`, `getNote()` to `lib/api.ts`.
 
 - [ ] Add session naming and management features:
   - Backend — update `backend/main.py` (read it first):
