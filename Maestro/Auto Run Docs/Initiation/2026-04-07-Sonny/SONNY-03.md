@@ -33,11 +33,12 @@ This phase adds the retrieval layer to Sonny — the ability to search past conv
   - Add a new status value `completed_no_embedding` for sessions where note writing succeeded but embedding failed
   - Create a backfill function `backfill_embeddings()` that scans for completed sessions missing embeddings and processes them. Call this on worker startup.
 
-- [ ] Add retrieval API endpoints to the backend. Update `backend/main.py` — read it first to understand the existing route patterns and conventions:
+- [x] Add retrieval API endpoints to the backend. Update `backend/main.py` — read it first to understand the existing route patterns and conventions:
   - `GET /api/search?q={query}&limit={n}` — performs semantic search using the vector store. Returns list of matching sessions with scores, summaries, and metadata. Default limit is 5.
   - `GET /api/search/stats` — returns vector store statistics (total documents, collection info)
   - `POST /api/search/reindex` — triggers a full reindex: clears the collection and re-embeds all completed sessions. Useful for recovery or after changing embedding models. Returns count of sessions reindexed.
   - All search endpoints should handle the case where ChromaDB has no data gracefully (return empty results, not errors)
+  - *Completed: 3 endpoints added to main.py, 7 tests in test_search_endpoints.py — all 59 tests pass.*
 
 - [ ] Build the search UI in the frontend. Create new components in `frontend/src/` — read the existing components first (`App.tsx`, `TranscriptPanel.tsx`) to match the established styling patterns and dark theme:
   - `components/SearchPanel.tsx` — a search interface:
