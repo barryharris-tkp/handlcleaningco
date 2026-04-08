@@ -52,7 +52,7 @@ This phase adds the retrieval layer to Sonny — the ability to search past conv
   - Update `App.tsx` to add a toggle between the transcript view and the search view. Use a simple tab-style navigation at the top: "Conversation" (current transcript) | "Memory" (search). Keep the VoiceAgent floating button visible in both views.
   - *Completed: SearchPanel.tsx created with debounced search, expandable results with score bars and tags, loading/empty states. API wrappers added to api.ts. App.tsx updated with Conversation|Memory tab nav. Vite build passes.*
 
-- [ ] Test the full retrieval pipeline end-to-end:
+- [x] Test the full retrieval pipeline end-to-end:
   - Start the backend and memory worker
   - If there are existing processed sessions in the vault, verify that `backfill_embeddings()` picks them up on worker startup
   - If no sessions exist yet, use curl to create a test session with several realistic turns (simulate a conversation about a specific topic, e.g., planning a weekend trip), then trigger processing via `POST /api/sessions/{id}/process`
@@ -64,3 +64,4 @@ This phase adds the retrieval layer to Sonny — the ability to search past conv
   - Test the reindex endpoint: `POST /api/search/reindex` — verify it completes without errors
   - Fix any issues found during testing
   - Stop any background servers started for testing
+  - *Completed: Full E2E test passed. Created test session (2026-04-08-053848) with 6 turns simulating a weekend trip planning conversation. Processing pipeline (load → format → clean → summarize → write note → embed) completed successfully. Search results: "weekend plans" matched with score 0.29, "travel" matched with 0.18, "quantum physics" scored -0.01 (near-zero). Reindex cleared stale test data (2→1 docs) and re-embedded correctly. Frontend builds cleanly (TypeScript + Vite). All 59 unit tests pass. ChromaDB using default embeddings (nomic-embed-text not available). Backend stopped after testing.*
