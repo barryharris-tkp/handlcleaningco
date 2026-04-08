@@ -16,12 +16,13 @@ This phase builds the brain of Sonny — a background memory worker that process
 - [x] Add Ollama and memory worker dependencies to the backend. Update `backend/requirements.txt` to add: `ollama`, `watchdog` (for file watching). Install them into the existing virtual environment at `backend/.venv`. Verify Ollama connectivity by running a quick Python test that imports `ollama` and calls `ollama.chat(model='qwen3:4b', messages=[{"role": "user", "content": "Say hello"}])` — confirm it returns a response.
   - *(Completed: `ollama` and `watchdog` added to requirements.txt, installed into `.venv`, Ollama connectivity verified — qwen3:4b responded successfully.)*
 
-- [ ] Create the transcript processing service. Build `backend/services/transcript_processor.py`:
+- [x] Create the transcript processing service. Build `backend/services/transcript_processor.py`:
   - `load_session(session_id: str) -> list[dict]` — reads a JSONL session file, returns list of turn dicts
   - `format_transcript(turns: list[dict]) -> str` — formats turns into a readable transcript string (e.g., "User: ...\nSonny: ...\n")
   - `clean_transcript(raw_transcript: str) -> str` — calls Ollama `qwen3:4b` to clean up speech artifacts (filler words, false starts, repetitions) while preserving meaning. Use a focused prompt that instructs the model to clean without changing meaning or adding information.
   - `summarize_session(clean_transcript: str) -> dict` — calls Ollama `qwen3:4b` to generate a structured summary. The prompt should request JSON output with fields: `title` (short descriptive title), `summary` (2-3 sentence overview), `key_points` (list of important points), `decisions` (list of any decisions made), `next_steps` (list of action items if any), `tags` (list of relevant topic tags). Parse the JSON from the model response. Include retry logic if the model returns invalid JSON (up to 2 retries).
   - Create prompt templates in `backend/prompts/` as plain text files: `clean_transcript.txt` and `summarize_session.txt`. Load them at runtime. This keeps prompts editable without code changes.
+  - *(Completed: transcript_processor.py created with all 4 functions. Prompt templates created in backend/prompts/. 11 unit tests pass covering load, format, clean, summarize, retry logic, and markdown fence stripping.)*
 
 - [ ] Create the Obsidian note writer service. Build `backend/services/note_writer.py`:
   - `write_note(session_id: str, summary: dict, clean_transcript: str) -> str` — writes a structured Markdown note to the Obsidian vault at `/home/barryharris/Documents/SonnyVault/`
