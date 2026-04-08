@@ -44,7 +44,7 @@ Sonny (S.O.N.N.Y) is a local-first AI voice system that turns conversations into
     - Update the system instruction to: "You are Sonny, a friendly and helpful voice assistant. You have natural conversations and help the user think through ideas, answer questions, and explore topics. Be concise but warm."
   - If the Gemini SDK does not support `inputAudioTranscription` in the live config, use a fallback approach: use the browser's `webkitSpeechRecognition` / `SpeechRecognition` API to capture user speech text in parallel, or simply log user turns as "[audio]" with a note that transcription will be added in a later phase. Do NOT let this block the prototype — audio capture and assistant text capture are the priority.
 
-- [ ] Create the main application layout and transcript panel. Build the full-page UI in `frontend/src/`:
+- [x] Create the main application layout and transcript panel. Build the full-page UI in `frontend/src/`:
   - `components/TranscriptPanel.tsx` — displays the live conversation transcript:
     - Shows each turn with speaker label (User / Sonny) and text
     - Auto-scrolls to the latest message
