@@ -60,7 +60,7 @@ This phase builds the brain of Sonny — a background memory worker that process
   - Create `backend/worker.py` as the entry point that runs the memory worker as a standalone process
   - *(Completed: memory_worker.py created with state management, full processing pipeline, watchdog-based file watcher with configurable delay, and session deduplication. worker.py entry point created with env-configurable delay via SONNY_PROCESSING_DELAY. 19 unit tests pass covering state management, scan logic, pipeline execution, error handling, and watchdog event handling.)*
 
-- [ ] Add memory worker API endpoints and update the startup script:
+- [x] Add memory worker API endpoints and update the startup script:
   - Add to `backend/main.py`:
     - `GET /api/sessions/{session_id}/status` — returns the processing status from the state file
     - `POST /api/sessions/{session_id}/process` — manually triggers processing for a session (useful for testing and re-processing)
@@ -73,3 +73,4 @@ This phase builds the brain of Sonny — a background memory worker that process
     - The note has correct YAML frontmatter and structured content
     - The summary is coherent and tags are relevant
   - Fix any issues found during testing
+  - *(Completed: 4 new API endpoints added to main.py — session status, manual process trigger, list notes, get note content. start.sh updated to launch memory worker as background process. 12 new tests in test_api_endpoints.py all pass (52 total). Full E2E pipeline verified with curl — created session with 5 turns of realistic garden bed conversation, triggered processing via Ollama qwen3:4b, confirmed Obsidian note created with correct YAML frontmatter, coherent summary, key points, and relevant tags.)*
